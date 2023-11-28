@@ -6,11 +6,11 @@ local buttonA = {
         love.graphics.setBackgroundColor(0,1,0)
     end,
     undo = function()
-        love.graphics.setBackgroundColor(1,1,1)
+        love.graphics.setBackgroundColor(0,0,0)
     end
 }
 
-function inputSystem.handleInput()
+function inputSystem:handleInput()
     if (love.keyboard.isDown('a')) then
         buttonA.execute()
     elseif (not love.keyboard.isDown('a')) then

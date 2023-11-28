@@ -1,3 +1,4 @@
+-- Simple 2D vector
 local vector = {}
 
 function vector:new(x, y)

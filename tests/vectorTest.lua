@@ -1,6 +1,5 @@
-package.path = package.path .. ";../modules/vector.lua"
-
-local vector = require(";../vector.lua")
+package.path = package.path .. ";../modules/?.lua"
+local vector = require("vector")
 
 local v1 = vector:new(1,2)
 local v2 = vector:new(3,4)
