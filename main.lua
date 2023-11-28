@@ -1,3 +1,5 @@
+package.path = package.path .. ";modules/inputSystem.lua"
+
 _G.love = require("love")
 local inputSystem = require("inputSystem")
 
@@ -6,10 +8,10 @@ function love.load()
 end
 
 function love.update(dt)    
-    
+    inputSystem.handleInput()
 end
 
 function love.draw()
-    inputSystem.handleInput()
+    
 end
 
