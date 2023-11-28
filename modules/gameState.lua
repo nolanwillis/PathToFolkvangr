@@ -2,9 +2,7 @@ local gameState = {}
 
 function gameState:new() {
     local newObj {
-        drawBuffer = {},
-        displayBuffer = {}
-        player = {}
+        entities = {}
     }
     self.__index = self
     return setmetatable(newObj, self)

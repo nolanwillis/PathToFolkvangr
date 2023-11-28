@@ -1,28 +1,24 @@
 _G.love = require("love")
 package.path = package.path .. ";modules/?.lua"
 local inputSystem = require("inputSystem")
+local entities = require("entities")
+local vector = require("vector")
+
+local player = entities.Player:new(100,100)
 
 function love.load()
     love.graphics.setBackgroundColor(0,0,0,1)
 end
 
-local x = 200
-local y = 200
-
 function love.update(dt)    
-    --inputSystem:handleInput()
-    if (love.keyboard.isDown("a")) then
-        x = x - 10
-    elseif (love.keyboard.isDown("d")) then
-        x = x + 10
-    elseif (love.keyboard.isDown("w")) then
-        y = y - 10
-    elseif (love.keyboard.isDown("s")) then
-        y = y + 10
-    end 
+    player:update(dt)    
 end
 
 function love.draw()
-    love.graphics.rectangle("fill", x, y, 50, 50)
+    player:draw()    
 end
 
+-- print snippet 
+-- love.graphics.setColor(1, 1, 1)
+-- love.graphics.setNewFont(20)
+-- love.graphics.print(type(self.pos.x), 100, 100)
